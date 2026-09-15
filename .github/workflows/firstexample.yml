@@ -1,22 +1,17 @@
 name: My First Workflow
-
 on: push
-
 jobs:
   first_job:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-  
-      - name: Welcome message
-        run: echo "My first GitHub Actions Job"
+      - name: Checkout Repo
+        uses: actions/checkout@v4
 
-      - name: List files
-        run: ls
-
-      - name: Read file
-        run: cat README.md
-
+      - name: List and Read Files
+        run: |
+          echo "My first GitHub Actions Job"
+          ls -ltra
+          cat README.md
+      - name: Generate ASCII Artwork
+        run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
 
