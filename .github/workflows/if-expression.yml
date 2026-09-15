@@ -2,6 +2,8 @@ name: Deploy on Main
 
 on:
   push:
+    branches:
+      - main
 
 env:
   CONTAINER_REGISTRY: docker.io
