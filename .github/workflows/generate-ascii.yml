@@ -19,7 +19,7 @@ jobs:
         run: cowsay -f elephant "Run for cover, I am a elephant....RAWR" >> elephant.txt
 
       - name: Verify Output
-        run: grep -i "elephant" dragon.txt
+        run: grep -i "elephant" elephant.txt
 
       - name: Display Artwork
         run: cat elephant.txt
