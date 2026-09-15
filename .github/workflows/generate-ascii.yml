@@ -1,0 +1,28 @@
+name: Generate ASCII Artwork
+
+on:
+  push:
+
+jobs:
+  ascii_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install cowsay
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cowsay
+
+      - name: Generate ASCII Art
+        run: cowsay -f elephant "Run for cover, I am a elephant....RAWR" >> elephant.txt
+
+      - name: Verify Output
+        run: grep -i "elephant" dragon.txt
+
+      - name: Display Artwork
+        run: cat elephant.txt
+
+      - name: List Workspace Files
+        run: ls -ltra
